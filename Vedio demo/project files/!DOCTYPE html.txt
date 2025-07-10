@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Rice Classifier</title>
+</head>
+<body>
+    <h2>Select a sample rice image to classify:</h2>
+    <form method="post" action="/predict">
+        {% for name, url in sample_images.items() %}
+            <label>
+                <input type="radio" name="img_url" value="{{ url }}" required>
+                {{ name }}
+            </label><br>
+            <img src="{{ url }}" width="200"><br><br>
+        {% endfor %}
+        <input type="submit" value="Classify">
+    </form>
+</body>
+</html>

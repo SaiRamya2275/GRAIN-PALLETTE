@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h2>Top Predictions:</h2>
+    <ul>
+        {% for pred in predictions %}
+            <li><strong>{{ pred[1] }}</strong> ({{ (pred[2]*100)|round(2) }}%)</li>
+        {% endfor %}
+    </ul>
+    <img src="{{ image_url }}" width="300"><br><br>
+    <a href="/">Try another image</a>
+</body>
+</html>
